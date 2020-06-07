@@ -1,0 +1,141 @@
+/*============================================================= Fonts =============================================================*/
+
+/*====================================== Imports ======================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oxygen:wght@400;700&display=swap");
+
+/*====================================== Mixins ======================================*/
+
+.titles() {
+    font-family: "Archivo Black", sans-serif;
+}
+
+.body() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+}
+
+.body-italic() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.body-bold() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+}
+
+.body-bold-italic() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/*====================================== Font styles ======================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    .paMar;
+}
+
+h1 {
+    .titles();
+    .font-size(5vw);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    @media (max-width: @breakpoint-tablet) {
+        .font-size(35px);
+    }
+
+    @media (max-width: @breakpoint-mobile) {
+        .font-size(30px);
+    }
+}
+
+h2, #typed, .typed-cursor {
+    .titles();
+    .font-size(3vw);
+
+    @media (max-width: @breakpoint-tablet) {
+        .font-size(28px);
+    }
+
+    @media (max-width: @breakpoint-mobile) {
+        .font-size(24px);
+    }
+}
+
+h3 {
+    .body-bold();
+    .font-size(28px);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    @media (max-width: @breakpoint-tablet) {
+        .font-size(24px);
+    }
+
+    @media (max-width: @breakpoint-mobile) {
+        .font-size(22px);
+    }
+}
+
+h4 {
+    .body-bold();
+    .font-size(24px);
+
+    @media (max-width: @breakpoint-tablet) {
+        .font-size(22px);
+    }
+
+    @media (max-width: @breakpoint-mobile) {
+        .font-size(20px);
+    }
+}
+
+h5 {
+    .body-bold();
+    .font-size(22px);
+
+    @media (max-width: @breakpoint-tablet) {
+        .font-size(20px);
+    }
+
+    @media (max-width: @breakpoint-mobile) {
+        .font-size(18px);
+    }
+}
+
+h6 {
+    .body-bold();
+    .font-size(20px);
+
+    @media (max-width: @breakpoint-tablet) {
+        .font-size(18px);
+    }
+
+    @media (max-width: @breakpoint-mobile) {
+        .font-size(18px);
+    }
+}
+
+p {
+    .font-size(15px);
+
+    a {
+        .body-bold();
+        text-decoration: none;
+    }
+}
+
+small {
+    .font-size(14px);
+    .body-italic();
+}

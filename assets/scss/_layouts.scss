@@ -1,0 +1,23 @@
+/*============================================================= Layouts =============================================================*/
+
+.container {
+    width: 100%;
+    padding: $margin-big 5%;
+    background-color: $white;
+    position: relative;
+    z-index: 5;
+
+    .content-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.col {
+    width: 50%;
+
+    @media (max-width: $breakpoint-mobile) {
+        width: 100%;
+    }
+}

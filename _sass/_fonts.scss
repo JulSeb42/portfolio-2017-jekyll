@@ -1,0 +1,141 @@
+/*============================================================= Fonts =============================================================*/
+
+/*====================================== Imports ======================================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oxygen:wght@400;700&display=swap");
+
+/*====================================== Mixins ======================================*/
+
+@mixin titles() {
+    font-family: "Archivo Black", sans-serif;
+}
+
+@mixin body() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+}
+
+@mixin body-italic() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin body-bold() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+}
+
+@mixin body-bold-italic() {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/*====================================== Font styles ======================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    @extend %paMar;
+}
+
+h1 {
+    @include titles();
+    @include font-size(5vw);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    @media (max-width: $breakpoint-tablet) {
+        @include font-size(35px);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include font-size(30px);
+    }
+}
+
+h2, #typed, .typed-cursor {
+    @include titles();
+    @include font-size(3vw);
+
+    @media (max-width: $breakpoint-tablet) {
+        @include font-size(28px);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include font-size(24px);
+    }
+}
+
+h3 {
+    @include body-bold();
+    @include font-size(28px);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    @media (max-width: $breakpoint-tablet) {
+        @include font-size(24px);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include font-size(22px);
+    }
+}
+
+h4 {
+    @include body-bold();
+    @include font-size(24px);
+
+    @media (max-width: $breakpoint-tablet) {
+        @include font-size(22px);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include font-size(20px);
+    }
+}
+
+h5 {
+    @include body-bold();
+    @include font-size(22px);
+
+    @media (max-width: $breakpoint-tablet) {
+        @include font-size(20px);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include font-size(18px);
+    }
+}
+
+h6 {
+    @include body-bold();
+    @include font-size(20px);
+
+    @media (max-width: $breakpoint-tablet) {
+        @include font-size(18px);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include font-size(18px);
+    }
+}
+
+p {
+    @include font-size(15px);
+
+    a {
+        @include body-bold();
+        text-decoration: none;
+    }
+}
+
+small {
+    @include font-size(14px);
+    @include body-italic();
+}

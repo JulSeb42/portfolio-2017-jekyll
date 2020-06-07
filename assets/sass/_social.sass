@@ -1,0 +1,16 @@
+/*============================================================= Social =============================================================*/
+
+.social 
+    @extend %ulNone
+    @include flexbox(center, flex-start, nowrap)
+
+    li 
+        a 
+            color: $white
+            @include transition(all, 0.2s, ease)
+
+            &:hover 
+                color: $lighter-gray
+            
+        &:not(:last-child) 
+            margin-right: 10px

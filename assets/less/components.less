@@ -1,0 +1,129 @@
+/*============================================================= Components =============================================================*/
+
+/*====================================== Buttons ======================================*/
+
+.btn-cv {
+    color: @fonts-black;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    position: relative;
+    .font-size(24px);
+    .body-bold();
+
+    &:after {
+        @height: 1px;
+        content: "";
+        width: 100%;
+        height: @height;
+        background-color: @fonts-black;
+        position: absolute;
+        right: 0;
+        top: calc(50% - @height / 2);
+        .transition(all, 0.2s, ease);
+    }
+
+    &:hover:after {
+        width: 0;
+    }
+}
+
+.btn-next {
+    width: 100%;
+    background-color: @gray;
+    height: 50vw;
+    max-height: 300px;
+    .flexbox(center, center, nowrap);
+    position: relative;
+    z-index: 3;
+    .titles();
+    color: @white;
+    text-decoration: none;
+    .font-size(28px);
+    text-transform: uppercase;
+    .transition(all, .2s, ease);
+
+    &:hover {
+        background-color: @white;
+        color: @gray;
+    }
+}
+
+/*====================================== Forms ======================================*/
+
+input, textarea {
+    border: none;
+    background: none;
+    .font-size(15px);
+    .body();
+    color: @white;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    border-bottom: 1px solid @dark-gray;
+    padding-bottom: 3px;
+
+    &::placeholder {
+        color: @lighter-gray;
+    }
+
+    &:-ms-input-placeholder, &::-ms-input-placeholder {
+        color: @lighter-gray;
+    }
+}
+
+input[type = "submit"] {
+    color: @white;
+    cursor: pointer;
+    .body-bold();
+}
+
+textarea {
+    resize: none;
+    height: 30vh;
+}
+
+form {
+    width: 100%;
+    .flexbox(flex-start, flex-start, nowrap);
+    .flex-column();
+
+    input:not(:last-child), textarea {
+        margin-bottom: @margin-small;
+    }
+
+    .container-submit {
+        .flexbox(center, flex-end, nowrap);
+        width: 100%;
+    }
+}
+
+/*====================================== HR ======================================*/
+
+hr {
+    width: 100%;
+    float: left;
+    border: none;
+    border-bottom: 1px solid @dark-gray;
+    margin-bottom: @margin-medium;
+}
+
+/*====================================== Fade In animation ======================================*/
+
+.fade {
+    opacity: 0 !important;
+    .transform(translateX(-10px));
+    .transition(all, .7s, ease);
+
+    &.fade-right {
+        .transform(translateX(10px));
+    }
+}
+
+.is-visible.fade {
+    opacity: 1 !important;
+    .transform(translateX(0));
+}

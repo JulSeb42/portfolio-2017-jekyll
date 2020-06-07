@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ page.title }} | {{ site.title }}</title>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta name="description" content="{{ page.description }}">
+        <meta name="author" content="">
+        <meta property="og:title" content="{{ page.title }}" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+        <meta property="og:image" content="/assets/images/{{ site.cover_og }}" />
+        <meta property="og:site_name" content="{{ site.title }}" />
+        <meta property="og:locale" content="en_GB" />
+        <!-- Website Language (see here https://stackoverflow.com/questions/3191664/list-of-all-locales-and-their-short-codes) -->
+        <link href="/assets/images/{{ site.favicon }}" rel="shortcut icon">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/font-awesome-all.min.css">
+
+        <!-- JS -->
+        <script src="/assets/js/jquery-2.1.4.min.js"></script>
+        <script src="/assets/js/plax.js"></script>
+        <script src="/assets/js/typed.js"></script>
+        <script src="/assets/js/js-head.js"></script>
+    </head>
+
+    <body>
+        {% include header.html %}
+        {{ content }}
+        {% include footer.html %}
+        
+        <script src="/assets/js/js.js"></script>
+    </body>
+</html>

@@ -1,0 +1,224 @@
+/*============================================================= Home =============================================================*/
+
+#home 
+    width: 100%
+    position: relative
+
+    #shell 
+        display: block
+        position: relative
+        width: 100%
+        height: 100vh
+        z-index: 1
+        overflow: hidden
+        background-color: $dark-blue
+
+        img 
+            max-width: inherit
+            position: absolute
+            $position: -150px
+            top: $position
+            left: $position
+
+            &#layer1 
+                z-index: 4
+
+            &#layer2 
+                z-index: 2
+            
+            &#layer3 
+                z-index: 1
+            
+    .title 
+        @extend %full
+        @include flexbox(center, center, nowrap)
+        @include flex-direction(column)
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 2
+        color: $white
+    
+#hero 
+    width: 100%
+    height: 70vh
+    @include flexbox(flex-start, flex-start, nowrap)
+
+    @media (max-width: $breakpoint-mobile) 
+        @include flex-direction(column)
+    
+    .col 
+        height: 100%
+
+        &:first-child 
+            background-color: $lighter-gray
+            @include flexbox(flex-start, center, nowrap)
+            @include flex-direction(column)
+            padding: $margin-small 5vw
+
+            p 
+                margin-bottom: $margin-small
+            
+        &:last-child 
+            img 
+                @extend %full
+                object-fit: cover
+            
+#about .content-container 
+    @include flexbox(flex-start, flex-start, nowrap)
+    @include flex-direction(row)
+
+    @media (max-width: $breakpoint-mobile) 
+        @include flex-direction(column-reverse)
+    
+    .col 
+        h3 
+            margin-bottom: $margin-medium
+        
+        ul 
+            @extend %ulNone
+
+            &:not(:last-child) 
+                margin-bottom: $margin-medium
+            
+            &.timeline 
+                @include flexbox(flex-start, flex-start, nowrap)
+                @include flex-direction(column)
+
+                li 
+                    @include flexbox(flex-start, flex-start, nowrap)
+                    @include flex-direction(column)
+
+                    &:not(:last-child) 
+                        margin-bottom: $margin-medium
+                    
+                    p 
+                        &:not(:last-child) 
+                            margin-bottom: $margin-small
+                        
+                        &.date 
+                            @include font-size(14px)
+                        
+                        &.title 
+                            @include body-bold()
+                            @include font-size(18px)
+                        
+                        &.skills 
+                            @include body-italic()
+                        
+            &.list-skills 
+                @include flexbox(center, flex-start, wrap)
+                margin-bottom: $margin-small
+
+                li 
+                    width: calc(100% / 3)
+                    margin-bottom: $margin-small
+
+                    @media (max-width: $breakpoint-mobile) 
+                        width: 50%
+                    
+    @media (max-width: $breakpoint-mobile) 
+        .col:last-child 
+            margin-bottom: $margin-medium
+        
+.cover-home 
+    width: 100%
+    background-attachment: fixed !important
+    background-position: center !important
+    background-size: cover !important
+    color: $white
+    @include flexbox(center, center, nowrap)
+    height: 60vh
+    text-transform: uppercase
+    letter-spacing: 0.5vw
+
+    &#projects 
+        background: url(/assets/images/l-cover1.png)
+
+        @media (max-width: $breakpoint-tablet) 
+            background: url(/assets/images/m-cover1.png)
+        
+        @media (max-width: $breakpoint-mobile) 
+            background: url(/assets/images/m-cover1.png)
+        
+    &#contact 
+        background: url(/assets/images/l-cover2.png)
+
+        @media (max-width: $breakpoint-tablet) 
+            background: url(/assets/images/m-cover2.png)
+        
+        @media (max-width: $breakpoint-mobile) 
+            background: url(/assets/images/m-cover2.png)
+        
+.list-projects 
+    @extend %ulNone
+    @include flexbox(flex-start, flex-start, wrap)
+
+    li 
+        width: 50%
+        position: relative
+        height: 60vh
+
+        @media (max-width: $breakpoint-mobile) 
+            width: 100%
+        
+        img 
+            @extend %full
+            object-fit: cover
+            position: relative
+            z-index: 1
+        
+        a 
+            @extend %full
+            position: absolute
+            top: 0
+            left: 0
+            @include flexbox(center, center, nowrap)
+            color: $fonts-black
+            background-color: rgba($white, 0.8)
+            z-index: 2
+            text-decoration: none
+            @include font-size(28px)
+            @include body-bold()
+            text-transform: uppercase
+            opacity: 0
+            @include transition(all, 0.2s, ease)
+
+            @media (hover: none) and (pointer: coarse) 
+                opacity: 1
+            
+        &:hover a 
+            opacity: 1
+        
+.contact 
+    @include flexbox(flex-start, flex-start, nowrap)
+    height: 70vh
+
+    @media (max-width: $breakpoint-mobile) 
+        @include flex-direction(column)
+        height: inherit
+
+        .col 
+            height: 50vh
+        
+    .col 
+        @extend %full
+        padding: $margin-medium 5vw
+        @include flexbox(flex-start, center, nowrap)
+        @include flex-direction(column)
+
+        &:first-child 
+            background-color: $gray
+
+            p 
+                color: $white
+
+                a 
+                    color: $white
+                    @include transition(all, 0.2s, ease)
+
+                    &:hover 
+                        color: $lighter-gray
+                    
+        &:last-child 
+            background-color: $light-gray

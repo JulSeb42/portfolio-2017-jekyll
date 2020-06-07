@@ -1,0 +1,207 @@
+/*============================================================= Projects =============================================================*/
+
+.cover {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    padding: @margin-big 5%;
+
+    img {
+        .full;
+        position: fixed;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .content {
+        .full;
+        color: @white;
+        .flexbox(flex-start, center, nowrap);
+        .flex-column();
+        position: relative;
+        z-index: 2;
+    }
+
+    &:before {
+        content: "";
+        .full;
+        .gradient(rgba(@dark-gray, 0), 0%, rgba(@dark-gray, 0.5), 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+.container-projects {
+    .flexbox(flex-start, flex-start, nowrap);
+    .flex-column();
+
+    h3, h4, h5, h6, p, ul {
+        margin-bottom: @margin-medium;
+    }
+
+     ul {
+        .ulNone;
+        .font-size(16px);
+
+        li {
+            .flexbox(flex-start, flex-start, nowrap);
+            padding-left: @margin-small;
+
+            &:not(:last-child) {
+                margin-bottom: @margin-small;
+            }
+            
+
+            &:before {
+                .icon("\f054");
+                font-weight: 900;
+                font-size: 12px;
+                line-height: 16px * 1.4;
+                margin-right: @margin-small;
+            }
+        }
+    }
+
+    a {
+        color: @fonts-black;
+        .transition(all, .2s, ease);
+
+        &:hover {
+            color: @gray;
+        }
+    }
+}
+
+.img-project {
+    position: relative;
+    z-index: 5;
+    .ulNone;
+    .flexbox(flex-start, flex-start, wrap);
+
+    @media (max-width: @breakpoint-mobile) {
+        .flex-column();
+    }
+
+    li {
+        height: 60vh;
+        max-height: 400px;
+        position: relative;
+        cursor: pointer;
+
+        &.col-1 {
+            width: 100%;
+        }
+
+        &.col-2 {
+            width: calc(100% / 2);
+
+            @media (max-width: @breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+
+        &.col-3 {
+            width: calc(100% / 3);
+
+            @media (max-width: @breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+
+        &.col-4 {
+            width: calc(100% / 4);
+
+            @media (max-width: @breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+
+        .img-container {
+            .full;
+
+            img {
+                .full;
+                object-fit: cover;
+                position: relative;
+                z-index: 1;
+                background-color: @white;
+            }
+
+            &.img-mockup {
+                img {
+                    padding: 5px;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        a, p {
+            .full;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: rgba(@white, .8);
+            .body-bold();
+            .font-size(28px);
+            text-transform: uppercase;
+            opacity: 0;
+            .transition(all, .2s, ease);
+            .flexbox(center, center, nowrap);
+            color: @fonts-black;
+            text-decoration: none;
+            text-align: center;
+
+            @media (hover: none) and (pointer: coarse) {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            a, p {
+                opacity: 1;
+            }
+        }
+
+        .modal {
+            position: fixed;
+            top: -100%;
+            // top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: rgba(@dark-gray, 0.8);
+            .full;
+            .flexbox(center, center, nowrap);
+            cursor: default;
+            .transition(all, .5s, ease);
+
+            i {
+                position: absolute;
+                right: 6.6%;
+                top: 35px;
+                color: @white;
+                font-size: 22px;
+                cursor: pointer;
+            }
+
+            picture {
+                .full;
+                .flexbox(center, center, nowrap);
+            }
+
+            img, iframe {
+                width: 90%;
+                height: 90%;
+                object-fit: contain;
+            }
+        }
+
+        &.modal-open .modal {
+            top: 0;
+        }
+    }
+}

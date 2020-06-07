@@ -1,0 +1,18 @@
+- title: Title
+  company: Company
+  city: City
+  date: Start Date - End Date
+  description: Description
+  skills: skills
+- title: Title
+  company: Company
+  city: City
+  date: Start Date - End Date
+  description: Description
+  skills:
+- title: Title
+  company: Company
+  city: City
+  date: Start Date - End Date
+  description: Description
+  skills: skills
